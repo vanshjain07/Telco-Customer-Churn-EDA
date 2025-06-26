@@ -1,74 +1,70 @@
-# Telco Customer Churn - EDA Project
+<h1>Telco Customer Churn - EDA Project</h1>
+    <p>This repository contains an exploratory data analysis (EDA) of the Telco Customer Churn dataset. The objective is to understand customer behavior, identify patterns in churn, and explore features that influence customer retention.</p>
 
-This repository contains an exploratory data analysis (EDA) of the Telco Customer Churn dataset. The objective is to understand customer behavior, identify patterns in churn, and explore features that influence customer retention.
+  <h2>📁 Dataset Overview</h2>
+    <ul>
+        <li><strong>Source</strong>: Telco Customer Churn dataset (Kaggle / IBM Sample Dataset)</li>
+        <li><strong>Rows</strong>: 7,043 customers</li>
+        <li><strong>Columns</strong>: 21 features</li>
+        <li><strong>Target Column</strong>: Churn (Yes/No)</li>
+    </ul>
 
----
+  <p>Features include:</p>
+    <ul>
+        <li>Demographics: gender, SeniorCitizen, Partner, Dependents</li>
+        <li>Services signed up: PhoneService, InternetService, StreamingTV, etc.</li>
+        <li>Account details: tenure, Contract, PaperlessBilling, PaymentMethod</li>
+        <li>Charges: MonthlyCharges, TotalCharges</li>
+    </ul>
 
-## 📁 Dataset Overview
-- **Source**: Telco Customer Churn dataset (Kaggle / IBM Sample Dataset)
-- **Rows**: 7,043 customers
-- **Columns**: 21 features
-- **Target Column**: `Churn` (Yes/No)
+   <h2>🧹 Data Cleaning</h2>
+    <ul>
+        <li>Converted TotalCharges to numeric, handled invalid blanks</li>
+        <li>Removed 11 rows with NaN in TotalCharges</li>
+        <li>Reset index after dropping rows</li>
+        <li>Encoded Yes/No columns into 1/0</li>
+    </ul>
 
-Features include:
-- Demographics: `gender`, `SeniorCitizen`, `Partner`, `Dependents`
-- Services signed up: `PhoneService`, `InternetService`, `StreamingTV`, etc.
-- Account details: `tenure`, `Contract`, `PaperlessBilling`, `PaymentMethod`
-- Charges: `MonthlyCharges`, `TotalCharges`
+  <h2>📊 Exploratory Data Analysis (EDA)</h2>
+    <ol>
+        <li>Churn Distribution – 26.5% customers churned</li>
+        <li>Gender-wise Churn – Similar churn rates</li>
+        <li>Contract Type vs Churn – Month-to-month users churn more</li>
+        <li>Monthly Charges vs Churn – Higher charges = more churn</li>
+        <li>Tenure vs Churn – New customers churn more</li>
+        <li>Internet Service vs Churn – Fiber users churn more</li>
+        <li>Payment Method vs Churn – Electronic checks = high churn</li>
+        <li>Correlation Heatmap – tenure & churn negatively correlated</li>
+    </ol>
 
----
+  <h2>📌 Key Insights</h2>
+    <ul>
+        <li>Long-term contracts reduce churn</li>
+        <li>Higher bills and shorter tenure increase churn</li>
+        <li>Fiber and electronic check users churn more</li>
+    </ul>
 
-## 🧹 Data Cleaning
-- Converted `TotalCharges` from object to numeric, handled invalid blanks using `errors='coerce'`
-- Removed 11 rows with `NaN` in `TotalCharges`
-- Reset dataframe index after dropping rows
-- Encoded `Yes/No` columns (`Partner`, `Churn`, etc.) into `1/0`
+   <h2>🛠 Tools Used</h2>
+    <ul>
+        <li>Python, Pandas, NumPy</li>
+        <li>Seaborn, Matplotlib</li>
+        <li>Jupyter Notebook</li>
+    </ul>
 
+  <h2>📂 Folder Structure</h2>
+    <pre>
+├── Telco_EDA.ipynb         # Main EDA notebook
+├── telco_churn.csv         # Original dataset
+├── graphs/                 # (Optional) Visuals exported
+├── README.md
+    </pre>
 
+  <h2 id="contributing">🤝 Contributing</h2>
+  <p>Contributions are welcome! Please fork the repository and submit a pull request.</p>
 
-### 1. Churn Distribution
-- Visualized base churn rate
-- About 26.5% of customers have churned
+  <h2 id="license">📄 License</h2>
+  <p>This project is open-source and available under the <strong>MIT License</strong>.</p>
 
-### 2. Gender-wise Churn
-- Similar churn rates across male and female customers
+  <h2 id="contact">📬 Contact</h2>
+  <p>Created with ❤️ by <strong>Vansh Jain</strong> - feel free to reach out via <a href="mailto:vanshjainbro@gmail.com">Email</a> or connect on <a href="https://https://www.linkedin.com/in/vansh-jain-471145289/">LinkedIn</a>.</p>
 
-### 3. Contract Type vs Churn
-- Month-to-month contract users churn the most
-- One/Two year contracts have much lower churn
-
-### 4. Monthly Charges vs Churn
-- Churned users tend to have higher monthly charges on average
-
-### 5. Tenure vs Churn
-- Newer customers (low tenure) are more likely to churn
-
-### 6. Internet Service vs Churn
-- Fiber optic users churn the most
-- DSL users churn less, and 'No internet' users churn the least
-
-### 7. Payment Method vs Churn
-- Customers using electronic check methods have the highest churn rate
-
-### 8. Correlation Heatmap
-- `tenure` negatively correlated with `Churn`
-- `MonthlyCharges` positively correlated
-- `TotalCharges` shows weak negative correlation
-
----
-
-## 📌 Key Insights
-- Long-term contracts (1–2 years) significantly reduce churn
-- Higher bills and shorter tenure increase churn likelihood
-- Electronic checks and fiber optic users more prone to churn
-
----
-
-## 🛠 Tools Used
-- Python, Pandas, NumPy
-- Seaborn, Matplotlib for visualization
-- Jupyter Notebook for interactive EDA
-
----
-
-## 📂 Folder Structure (if needed)
